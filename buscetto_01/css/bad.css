@@ -1,0 +1,101 @@
+/* ---------------------------------------------------
+   Bad Navigation
+   (intentionally awful: clashing colors, unreadable
+   type, and hover transitions that fight the user)
+--------------------------------------------------- */
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	background-color: #ff00ff;
+	color: #39ff14;
+	font-family: "Comic Sans MS", "Brush Script MT", cursive;
+	line-height: 2.4;
+}
+
+nav {
+	display: flex;
+	flex-direction: column;
+	background-color: #00ffff;
+	padding: 2rem 0.25rem 2rem 3rem;
+	border-bottom: 10px dotted #ffff00;
+}
+
+.logo h1 {
+	margin: 0 0 1rem 0;
+	font-size: 3rem;
+	color: #ffcc00;
+	text-shadow: 3px 3px 0 #ff00ff, -3px -3px 0 #00ff00;
+	transform: rotate(-8deg);
+}
+
+nav ul {
+	list-style: square inside;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+nav li:nth-child(odd) {
+	background-color: #ffff00;
+}
+
+nav li:nth-child(even) {
+	background-color: #ff66cc;
+}
+
+nav a {
+	display: block;
+	padding: 1.4rem 0.5rem;
+	color: #003300;
+	text-decoration: underline wavy #ff0000;
+	font-size: 1.8rem;
+	letter-spacing: 0.35em;
+	text-transform: uppercase;
+	transition: transform 1.4s ease-in-out, letter-spacing 1.4s ease-in-out, background-color 1.4s linear;
+	cursor: wait;
+}
+
+nav a:hover,
+nav a:focus {
+	transform: scale(1.8) rotate(12deg);
+	letter-spacing: 0.6em;
+	background-color: #00ff00;
+	color: #ffffff;
+}
+
+nav a.current {
+	color: #ff00ff;
+	background-color: #003300;
+	font-style: italic;
+	text-decoration: line-through;
+}
+
+@media screen and (min-width: 769px) {
+
+	nav {
+		flex-direction: row-reverse;
+		align-items: flex-end;
+		justify-content: space-around;
+		padding: 0.5rem;
+	}
+
+	.logo h1 {
+		font-size: 4.5rem;
+	}
+
+	nav ul {
+		flex-direction: row;
+		gap: 0.1rem;
+	}
+
+	nav a {
+		padding: 0.2rem 0.1rem;
+		font-size: 1.4rem;
+	}
+
+}
